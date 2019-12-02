@@ -11,8 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.anuo.worksix.data.CallLogInfo;
 import com.anuo.worksix.R;
+import com.anuo.worksix.data.CallLogInfo;
 
 import java.util.List;
 
@@ -30,7 +30,7 @@ public class CallAdapter extends RecyclerView.Adapter<CallAdapter.ViewHolder> {
     @NonNull
     @Override
     public CallAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        return new ViewHolder(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_fragment_in, viewGroup, false));
+        return new ViewHolder(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_fragment, viewGroup, false));
     }
 
     @Override

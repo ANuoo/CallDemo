@@ -20,6 +20,7 @@ public class ContactsMessageManager {
     private List<CallLogInfo> inList;
     private List<CallLogInfo> outList;
     private List<CallLogInfo> missList;
+
     private ContactsMessageManager() {
     }
 
@@ -43,6 +44,7 @@ public class ContactsMessageManager {
                 Cursor cursor = resolver.query(uri, projects, null, null, CallLog.Calls.DEFAULT_SORT_ORDER);
                 while (cursor.moveToNext()) {
                     String name = cursor.getString(0);
+                    if (name == null) name = "未备注";
                     String number = cursor.getString(1);
                     String date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date(cursor.getLong(2)));
                     int type = cursor.getInt(3);
@@ -83,6 +85,7 @@ public class ContactsMessageManager {
 
     public interface Callback {
         void onSuccess();
+
         void onFail(Exception e);
     }
 }
